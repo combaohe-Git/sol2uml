@@ -1,0 +1,12 @@
+name: 176_Protocol_UML
+on: [push]
+jobs:
+  visualize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Sol2UML
+        run: npm install -g sol2uml
+      - name: Generate Class Diagram
+        run: sol2uml ./contracts -o 8.6_WBTC_Structure.svg
+
